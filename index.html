@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 Tahun Bersama – Dewa & Risma 💕</title>
+  <meta name="description" content="Sebuah buku kenangan cinta untuk merayakan 4 tahun kebersamaan Dewa Tegar Febriyansah dan Risma Damayanti" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&family=Crimson+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=7" />
+</head>
+<body>
+
+  <!-- PARTICLES BACKGROUND -->
+  <div id="particles-container"></div>
+
+  <!-- PETALS CONTAINER -->
+  <div id="petals-container"></div>
+
+  <!-- CONFETTI CONTAINER -->
+  <div id="confetti-container"></div>
+
+  <!-- M4A first, with MP3 fallback for browsers without AAC support -->
+  <audio id="background-music" loop preload="none">
+    <source src="assets/music/our-song.m4a" type="audio/mp4" />
+    <source src="assets/music/our-song.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- MUSIC TOGGLE BTN -->
+  <button id="music-btn" class="music-toggle" title="Putar musik" aria-label="Putar musik latar" onclick="toggleMusic()">
+    <span class="music-icon">▶️</span>
+    <span class="music-label">Kita Lewati Berdua</span>
+  </button>
+
+  <!-- ===================== HALAMAN 0: COVER / INTRO ===================== -->
+  <section class="page page-cover active" id="page-0">
+    <div class="cover-bg-art">
+      <div class="cover-flowers">
+        <div class="flower f1">🌸</div>
+        <div class="flower f2">🌹</div>
+        <div class="flower f3">🌷</div>
+        <div class="flower f4">🌸</div>
+        <div class="flower f5">💐</div>
+        <div class="flower f6">🌸</div>
+      </div>
+    </div>
+
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope">
+        <div class="envelope-flap" id="envelope-flap"></div>
+        <div class="envelope-body">
+          <div class="envelope-letter" id="envelope-letter">
+            <div class="letter-content">
+              <div class="letter-seal">💕</div>
+              <p class="letter-to dancing">buat kamu yang selalu ada,</p>
+              <h1 class="letter-name playfair">Risma Damayanti</h1>
+              <p class="letter-from lora">dari orang yang paling sayang sama kamu</p>
+              <div class="letter-deco">— ♡ —</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="open-btn pulse-btn" id="open-letter-btn" onclick="openLetter()">
+        <span class="btn-icon">💌</span>
+        <span class="btn-text">Buka dulu yuk~</span>
+      </button>
+
+      <p class="cover-hint lora">ada sesuatu buat kamu... 🥺</p>
+    </div>
+
+    <div class="scrap-deco cover-deco">
+      <div class="tape tape-pink"></div>
+      <div class="tape tape-gold top-right"></div>
+      <div class="polaroid-deco">
+        <div class="polaroid-inner">📷</div>
+        <p>us ♡</p>
+      </div>
+      <div class="heart-deco">❤️</div>
+      <div class="star-deco">✨</div>
+    </div>
+  </section>
+
+  <!-- ===================== HALAMAN 1: AWAL CERITA ===================== -->
+  <section class="page page-chapter" id="page-1">
+    <div class="scrapbook-bg ch1-bg"></div>
+
+    <div class="page-inner">
+      <div class="chapter-label dancing">Chapter I</div>
+      <h2 class="chapter-title playfair">Dari sini semuanya dimulai~</h2>
+
+      <div class="scrap-layout layout-1">
+        <div class="scrap-card main-photo-card tilt-left">
+          <div class="photo-slot photo-large">
+            <img src="assets/photos/photo1.jpg" alt="Foto bersama" class="scrap-photo" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="photo-placeholder">
+              <span class="ph-icon">📸</span>
+              <span class="ph-text">foto pertama kita</span>
+              <span class="ph-hint">(ganti dengan foto asli)</span>
+            </div>
+          </div>
+          <div class="photo-caption dancing">the beginning ♡</div>
+        </div>
+
+        <div class="scrap-card text-card tilt-right">
+          <div class="tape tape-blue"></div>
+          <h3 class="card-title dancing">waktu itu...</h3>
+          <div class="card-text lora">
+            <p>Cintaku,</p>
+            <p>jujur, waktu pertama kali lihat kamu — aku langsung mikir, <em>"ini orangnya nih."</em> ga tau kenapa, cuma ngerasa aja.</p>
+            <p>dan ternyata feeling itu beneran ga salah. 🥺</p>
+          </div>
+          <div class="card-deco">🌸 🤍 🌸</div>
+        </div>
+
+        <div class="scrap-card quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="playfair-italic">
+            dari sekian banyak orang di dunia, hati ini milih kamu. dan itu keputusan terbaik yang pernah aku buat.
+          </blockquote>
+        </div>
+
+        <div class="scrap-sticker s1">🦋</div>
+        <div class="scrap-sticker s2">⭐</div>
+        <div class="tape tape-pink ch1-tape1"></div>
+        <div class="tape tape-floral ch1-tape2 vertical"></div>
+      </div>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn prev-btn" onclick="goToPage(0)" aria-label="Halaman sebelumnya">
+        <span>←</span> Kembali
+      </button>
+      <div class="page-dots">
+        <span class="dot" onclick="goToPage(0)"></span>
+        <span class="dot active" onclick="goToPage(1)"></span>
+        <span class="dot" onclick="goToPage(2)"></span>
+        <span class="dot" onclick="goToPage(3)"></span>
+        <span class="dot" onclick="goToPage(4)"></span>
+        <span class="dot" onclick="goToPage(5)"></span>
+      </div>
+      <button class="nav-btn next-btn" onclick="goToPage(2)" aria-label="Halaman berikutnya">
+        Lanjut <span>→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== HALAMAN 2: GALERI KENANGAN ===================== -->
+  <section class="page page-chapter" id="page-2">
+    <div class="scrapbook-bg ch2-bg"></div>
+
+    <div class="page-inner">
+      <div class="chapter-label dancing">Chapter II</div>
+      <h2 class="chapter-title playfair">momen-momen yang ga mau aku lupa</h2>
+
+      <div class="polaroid-gallery">
+        <div class="polaroid-item p-tilt-l">
+          <div class="polaroid-frame">
+            <img src="assets/photos/photo2.jpg" alt="Kenangan 1" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="polaroid-no-img">📸</div>
+          </div>
+          <p class="polaroid-caption dancing">senyummu itu ♡</p>
+        </div>
+
+        <div class="polaroid-item p-tilt-r">
+          <div class="polaroid-frame">
+            <img src="assets/photos/photo3.jpg" alt="Kenangan 2" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="polaroid-no-img">📸</div>
+          </div>
+          <p class="polaroid-caption dancing">selalu bahagia</p>
+        </div>
+
+        <div class="polaroid-item p-tilt-l big-polar">
+          <div class="polaroid-frame">
+            <img src="assets/photos/photo4.jpg" alt="Kenangan 3" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="polaroid-no-img">📸</div>
+          </div>
+          <p class="polaroid-caption dancing">foto favorit kita 💕</p>
+        </div>
+
+        <div class="polaroid-item p-tilt-r">
+          <div class="polaroid-frame">
+            <img src="assets/photos/photo5.jpg" alt="Kenangan 4" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="polaroid-no-img">📸</div>
+          </div>
+          <p class="polaroid-caption dancing">ketawa terus</p>
+        </div>
+
+        <div class="polaroid-item p-straight">
+          <div class="polaroid-frame">
+            <img src="assets/photos/photo6.jpg" alt="Kenangan 5" onerror="this.parentElement.classList.add('no-photo')" />
+            <div class="polaroid-no-img">📸</div>
+          </div>
+          <p class="polaroid-caption dancing">my world 🌍</p>
+        </div>
+      </div>
+
+      <div class="gallery-quote">
+        <p class="lora-italic">"tiap foto ini nyimpen cerita masing-masing. tapi ga ada satupun yang bisa nangkep gimana bahagianya aku punya kamu." 🥺</p>
+        <div class="tape tape-pink gq-tape"></div>
+      </div>
+
+      <div class="scrap-sticker sg1">🌸</div>
+      <div class="scrap-sticker sg2">💫</div>
+      <div class="scrap-sticker sg3">🦋</div>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn prev-btn" onclick="goToPage(1)" aria-label="Halaman sebelumnya">
+        <span>←</span> Kembali
+      </button>
+      <div class="page-dots">
+        <span class="dot" onclick="goToPage(0)"></span>
+        <span class="dot" onclick="goToPage(1)"></span>
+        <span class="dot active" onclick="goToPage(2)"></span>
+        <span class="dot" onclick="goToPage(3)"></span>
+        <span class="dot" onclick="goToPage(4)"></span>
+        <span class="dot" onclick="goToPage(5)"></span>
+      </div>
+      <button class="nav-btn next-btn" onclick="goToPage(3)" aria-label="Halaman berikutnya">
+        Lanjut <span>→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== HALAMAN 3: TIMELINE 4 TAHUN ===================== -->
+  <section class="page page-chapter" id="page-3">
+    <div class="scrapbook-bg ch3-bg"></div>
+
+    <div class="page-inner">
+      <div class="chapter-label dancing">Chapter III</div>
+      <h2 class="chapter-title playfair">4 tahun kita lewati berdua~</h2>
+
+      <div class="timeline">
+        <div class="timeline-item tl-left" data-year="2022">
+          <div class="tl-year dancing">2022</div>
+          <div class="tl-card tilt-right">
+            <div class="tl-tape tape-pink"></div>
+            <div class="tl-icon">🌟</div>
+            <h3 class="tl-title dancing">Tahun Pertama 🌱</h3>
+            <p class="tl-text lora">seneng banget sih akhirnya bisa dapetin kamu, setiap liat kamu tuh bawaan nya salting terus soalnya kamu lucu hehehhe 🥹</p>
+            <div class="tl-photo-slot">
+              <img src="assets/photos/year1.jpg" alt="2022" onerror="this.parentElement.classList.add('no-photo'); this.style.display='none'" />
+            </div>
+          </div>
+          <div class="tl-dot">💕</div>
+        </div>
+
+        <div class="timeline-item tl-right" data-year="2023">
+          <div class="tl-year dancing">2023</div>
+          <div class="tl-card tilt-left">
+            <div class="tl-tape tape-gold"></div>
+            <div class="tl-icon">🌈</div>
+            <h3 class="tl-title dancing">Tahun Kedua 🌿</h3>
+            <p class="tl-text lora">udah mulai beneran kenal satu sama lain. ada yang nyebelin, ada yang bikin nangis, ada yang lucu banget — tapi ujungnya selalu "i love u sayang." 🫶</p>
+            <div class="tl-photo-slot">
+              <img src="assets/photos/year2.jpg" alt="2023" onerror="this.parentElement.classList.add('no-photo'); this.style.display='none'" />
+            </div>
+          </div>
+          <div class="tl-dot">🌸</div>
+        </div>
+
+        <div class="timeline-item tl-left" data-year="2024">
+          <div class="tl-year dancing">2024</div>
+          <div class="tl-card tilt-right">
+            <div class="tl-tape tape-blue"></div>
+            <div class="tl-icon">🎯</div>
+            <h3 class="tl-title dancing">Tahun Ketiga 🌳</h3>
+            <p class="tl-text lora">masuk nih fase-fase kita saling nyalahin, tapi hebatnya kita tuh selalu bisa saling memaafkan dan belajar. keren ya kita 💙</p>
+            <div class="tl-photo-slot">
+              <img src="assets/photos/year3.jpg" alt="2024" onerror="this.parentElement.classList.add('no-photo'); this.style.display='none'" />
+            </div>
+          </div>
+          <div class="tl-dot">🌺</div>
+        </div>
+
+        <div class="timeline-item tl-right special-year" data-year="2025">
+          <div class="tl-year dancing">2025 – 2026</div>
+          <div class="tl-card tilt-left glow-card">
+            <div class="tl-tape tape-rose"></div>
+            <div class="tl-icon">👑</div>
+            <h3 class="tl-title dancing">Tahun Keempat ✨</h3>
+            <p class="tl-text lora">tahun dimana kita sama-sama diuji soal waktu, dari aku yang udah mulai fokus untuk lulus, dan kamu yang fokus membangun ekonomi, tapi hebatnya kita ngga pernah kehilangan waktu ya. 💕</p>
+            <div class="tl-badge">4 TAHUN 💕</div>
+            <div class="tl-photo-slot">
+              <img src="assets/photos/year4.jpg" alt="2025–2026" onerror="this.parentElement.classList.add('no-photo'); this.style.display='none'" />
+            </div>
+          </div>
+          <div class="tl-dot special-dot">💍</div>
+        </div>
+      </div>
+
+      <div class="scrap-sticker st1">📌</div>
+      <div class="scrap-sticker st2">✈️</div>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn prev-btn" onclick="goToPage(2)" aria-label="Halaman sebelumnya">
+        <span>←</span> Kembali
+      </button>
+      <div class="page-dots">
+        <span class="dot" onclick="goToPage(0)"></span>
+        <span class="dot" onclick="goToPage(1)"></span>
+        <span class="dot" onclick="goToPage(2)"></span>
+        <span class="dot active" onclick="goToPage(3)"></span>
+        <span class="dot" onclick="goToPage(4)"></span>
+        <span class="dot" onclick="goToPage(5)"></span>
+      </div>
+      <button class="nav-btn next-btn" onclick="goToPage(4)" aria-label="Halaman berikutnya">
+        Lanjut <span>→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== HALAMAN 4: VIDEO KENANGAN ===================== -->
+  <section class="page page-chapter" id="page-4">
+    <div class="scrapbook-bg ch4-bg"></div>
+
+    <div class="page-inner">
+      <div class="chapter-label dancing">Chapter IV</div>
+      <h2 class="chapter-title playfair">momen yang pengen aku tonton terus</h2>
+
+      <div class="video-section">
+        <div class="video-frame-wrapper tilt-slight">
+          <div class="video-frame-deco">
+            <div class="tape tape-pink vf-tape1"></div>
+            <div class="tape tape-gold vf-tape2"></div>
+          </div>
+          <div class="video-container" id="video-container">
+            <video id="main-video" controls playsinline>
+              <source src="assets/videos/video.mp4" type="video/mp4" />
+            </video>
+            <div class="video-placeholder" id="video-placeholder">
+              <div class="vp-icon">🎬</div>
+              <h3 class="vp-title dancing">video kenangan kita</h3>
+              <p class="vp-text lora">Simpan video MP4 di sini:<br/><code>assets/videos/video.mp4</code></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-quote-card">
+          <div class="tape tape-blue"></div>
+          <h3 class="vq-title dancing">Kita Lewati Berdua 🎵</h3>
+          <div class="vq-lyrics lora-italic">
+            <p>"Di kala hujan turun deras</p>
+            <p>kala rindunya merasuk jiwa</p>
+            <p>ku selalu ingat wajahmu</p>
+            <p>dan ku tahu kamu pun merindukanku..."</p>
+            <p style="margin-top:8px; font-size:0.78rem; opacity:0.7;">— Overnight</p>
+          </div>
+          <div class="vq-deco dancing">lagu kita, buat kita 🎵</div>
+        </div>
+      </div>
+
+      <div class="photo-row">
+        <div class="mini-polaroid mp-tilt-l">
+          <img src="assets/photos/moment1.jpg" alt="momen" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="mp-no-img">📸</div>
+          <p class="dancing">cinematic ♡</p>
+        </div>
+        <div class="mini-polaroid mp-straight">
+          <img src="assets/photos/moment2.jpg" alt="momen" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="mp-no-img">📸</div>
+          <p class="dancing">real life movie</p>
+        </div>
+        <div class="mini-polaroid mp-tilt-r">
+          <img src="assets/photos/moment3.jpg" alt="momen" onerror="this.parentElement.classList.add('no-photo')" />
+          <div class="mp-no-img">📸</div>
+          <p class="dancing">my favorite ♡</p>
+        </div>
+      </div>
+
+      <div class="scrap-sticker sv1">🎞️</div>
+      <div class="scrap-sticker sv2">🎵</div>
+    </div>
+
+    <div class="page-nav">
+      <button class="nav-btn prev-btn" onclick="goToPage(3)" aria-label="Halaman sebelumnya">
+        <span>←</span> Kembali
+      </button>
+      <div class="page-dots">
+        <span class="dot" onclick="goToPage(0)"></span>
+        <span class="dot" onclick="goToPage(1)"></span>
+        <span class="dot" onclick="goToPage(2)"></span>
+        <span class="dot" onclick="goToPage(3)"></span>
+        <span class="dot active" onclick="goToPage(4)"></span>
+        <span class="dot" onclick="goToPage(5)"></span>
+      </div>
+      <button class="nav-btn next-btn special-next" onclick="goToPage(5)" aria-label="Halaman berikutnya">
+        Ke Pesan Terakhir <span>💌</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== HALAMAN 5: SURAT CINTA & ANNIVERSARY ===================== -->
+  <section class="page page-final" id="page-5">
+    <div class="scrapbook-bg ch5-bg"></div>
+
+    <!-- Floating candles -->
+    <div class="candles">
+      <div class="candle c1"><div class="flame"></div></div>
+      <div class="candle c2"><div class="flame"></div></div>
+      <div class="candle c3"><div class="flame"></div></div>
+    </div>
+
+    <div class="page-inner final-inner">
+      <div class="chapter-label dancing">Chapter V – halaman terakhir 🤍</div>
+
+      <!-- ANNIVERSARY COUNTER -->
+      <div class="anniversary-banner">
+        <div class="anni-stars">✨ ✨ ✨</div>
+        <div class="anni-number dancing" id="anni-number">4</div>
+        <div class="anni-label playfair">Tahun Kebersamaan</div>
+        <div class="anni-date lora" id="anni-date">26 November 2026</div>
+        <div class="anni-days dancing" id="days-together"></div>
+        <div class="anni-stars">✨ ✨ ✨</div>
+      </div>
+
+      <!-- LOVE LETTER -->
+      <div class="love-letter-wrapper">
+        <div class="love-letter">
+          <div class="tape tape-pink ll-tape1"></div>
+          <div class="tape tape-rose ll-tape2"></div>
+          <div class="ll-header">
+            <div class="ll-seal">💕</div>
+            <h2 class="ll-title playfair">Surat Cintaku Untukmu</h2>
+          </div>
+          <div class="ll-body lora">
+            <p class="ll-greeting dancing">Risma Damayanti,</p>
+
+            <p>empat tahun. ga kerasa ya? tapi kalo dipikir-pikir lagi, banyak banget yang kita lewatin. yang lucu, yang nyebelin, yang bikin nangis, yang bikin senyum-senyum sendiri sampe malem.</p>
+
+            <p>kamu tau ga sih, suaramu itu masih sama efeknya kayak dulu. tiap denger kamu ngobrol, ngerasain sesuatu yang susah banget dijelasin — tapi rasanya hangat gitu. <em>nyaman banget.</em></p>
+
+            <p><em>Risma</em> — di antara semua yang pernah terjadi di hidup aku, milih kamu adalah satu-satunya hal yang ga pernah aku sesali. sama sekali. serius.</p>
+
+            <p>kamu yang ada waktu aku lagi sedih. yang ketawa di jokes aku yang ga lucu. yang kadang ngambek tapi tetep lucu apalagi pas manyun, kaya bebek hahahahaha. <strong>dan itu... itu yang bikin aku yakin, kamu beneran yang aku mau.</strong></p>
+
+            <p>4 tahun kita jalanin bareng — naik turunnya, ribetnya, senengnya. semua itu jadi cerita kita. dan aku suka banget sama setiap halamannya, termasuk yang ga mulus sekalipun.</p>
+
+            <p>satu hal yang pengen aku selalu ingetin ke kamu: <em>kamu itu rumah buat aku. alasan aku mau pulang.</em> 🏠💕</p>
+
+            <p class="ll-closing lora-italic">selamat anniversary ke 4 tahun cintaku. ini baru awal dari bab yang jauh lebih seru yang kita tulis bareng. 🥺</p>
+
+            <div class="ll-signature">
+              <p class="dancing sig-line">dengan semua rasa sayang yang ada,</p>
+              <p class="playfair sig-name">Dewa Tegar Febriyansah</p>
+              <p class="lora sig-date">26 November 2026 💕</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SURPRISE BUTTON -->
+      <div class="surprise-section">
+        <p class="surprise-hint dancing">eh, ada satu lagi nih buat kamu... 🎉</p>
+        <button class="surprise-btn" id="surprise-btn" onclick="triggerSurprise()">
+          <span class="sb-icon">🎊</span>
+          <span class="sb-text">klik sini dulu~</span>
+          <span class="sb-shine"></span>
+        </button>
+      </div>
+
+      <!-- SURPRISE MESSAGE (hidden initially) -->
+      <div class="surprise-message" id="surprise-message">
+        <div class="sm-inner">
+          <div class="sm-emoji">💞</div>
+          <h2 class="sm-title playfair">Happy 4th Anniversary! 🎉</h2>
+          <p class="sm-text dancing">Risma Damayanti,<br/>aku sayang kamu lebih dari yang bisa aku ucapin 💕</p>
+          <div class="sm-deco">🌹 🌸 💍 🌸 🌹</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-nav final-nav">
+      <button class="nav-btn prev-btn" onclick="goToPage(4)" aria-label="Halaman sebelumnya">
+        <span>←</span> Kembali
+      </button>
+      <div class="page-dots">
+        <span class="dot" onclick="goToPage(0)"></span>
+        <span class="dot" onclick="goToPage(1)"></span>
+        <span class="dot" onclick="goToPage(2)"></span>
+        <span class="dot" onclick="goToPage(3)"></span>
+        <span class="dot" onclick="goToPage(4)"></span>
+        <span class="dot active" onclick="goToPage(5)"></span>
+      </div>
+      <button class="nav-btn next-btn" onclick="goToPage(0)" aria-label="Ke halaman awal">
+        Mulai Lagi 🔄
+      </button>
+    </div>
+  </section>
+
+  <!-- IMAGE LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <img class="lb-img" id="lb-img" src="" alt="Foto kenangan" />
+  </div>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>
